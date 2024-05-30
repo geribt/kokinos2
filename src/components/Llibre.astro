@@ -1,0 +1,17 @@
+---
+
+let {autor, titol, imatge} = Astro.props;
+
+let requadre = "font-size:16px; border: 1px solid #bab8b8; display:inline-block; margin-right:35px; margin-bottom: 20px; text-align:center";
+---
+
+
+<div style={requadre}>
+    <img src={`./public/img/${imatge}`} alt="" srcset="" style="width: 100%; border-bottom: 1px solid gray;">
+    <div>
+        <h3 style="display: block;margin-block-start: 1em;  
+        color:#50bada; font-size: 16px; text-transform:uppercase;">{titol}</h3>
+        <h4 style="font-size: 16px; display: block;  
+        margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px;">{autor}</h4>
+    </div>
+</div>

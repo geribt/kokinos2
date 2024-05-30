@@ -1,0 +1,77 @@
+---
+import Base from "../layouts/Base.astro"
+import Llibre from "../components/Llibre.astro";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const llibres = [
+	{
+		id: 1,
+		titol: "Zozó Dormilon",
+		autor: "Bruno Douin",
+		imatge: "zozo_dormilon.jpg"
+	},
+
+	{
+		id: 2,
+		titol: "Zozó Dormilon",
+		autor: "Bruno Douin",
+		imatge: "zozo_dormilon.jpg"
+	},
+	{
+		id: 3,
+		titol: "Zozó Dormilon",
+		autor: "Bruno Douin",
+		imatge: "zozo_dormilon.jpg"
+	},
+	{
+		id: 4,
+		titol: "Zozó Dormilon",
+		autor: "Bruno Douin",
+		imatge: "zozo_dormilon.jpg"
+	}
+]
+---
+
+<Base>
+	<style>
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+			margin-left: 20px;
+			font-size: 16px;
+		}
+		#container-cataleg{
+			margin-left: 50px;
+		}
+		li{
+			display: inline;
+			color:#50bada;
+			text-decoration: none;
+		}
+		.fnt-lg{
+			font-size: 30px;
+		}
+	</style>
+	<div id="container-cataleg">
+		<h1 class="col-lg-12 text-danger text-uppercase fnt-lg fnt-upper">Catálogo</h1>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<nav>
+				<ul class="">
+				<li>
+					<a class="text-decoration-none text-reset" href="./index.astro">AUTORES</a>
+
+				</li>
+				<li>
+					<a class="text-decoration-none text-reset" href="./index.astro">COLECCIÓN</a>
+				</li>
+				<li>
+					<a class="text-decoration-none text-reset" href="./index.astro">TODOS</a>
+				</li>
+				</ul>
+			</nav>
+		</div>
+		{
+			llibres.map(llibre => <Llibre titol={llibre.titol} autor={llibre.autor} imatge={llibre.imatge}/>)
+		}
+	</div>
+
+</Base>
